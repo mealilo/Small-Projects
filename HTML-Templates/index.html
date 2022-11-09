@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">body {background-color: gray;}</style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  
+  
+    <script>
+    fetch("https://qqmwvmhox6vvnoab47bol3tnca0pxgto.lambda-url.us-east-2.on.aws/").
+    then((response) =>response.json()).then((data) =>{
+    // loop through the array received from API// add each item to a div tag in this page
+      for(i= 0; i< data.length; i++) {document.getElementById("donutListBox").innerHTML+= "<tr>" + "<td>" + data[i]['id'] +"</td>" + "<td>" + data[i]['date'] + "</td>" + "<td>" + data[i]['salesnumbers'] +"</td>" + "</tr>";}
+    });
+  
+  
+  
+    </script>
+  
+  <body>
+  
+    <div class="card">
+      <h1 > Store Sales: </h1>
+    </div>
+  
+    <table class="table table-dark table-striped table-bordered table-sm w-50">
+      <thead>
+        <td>Store ID</th>
+        <th> Date</th>
+        <th> Sales</th>
+      </thead>
+     <tbody id="donutListBox">
+  
+     </tbody>
+    </table>
+  </body>
+  
+  
